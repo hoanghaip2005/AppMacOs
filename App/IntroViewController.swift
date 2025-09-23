@@ -16,20 +16,26 @@ class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("IntroViewController loaded")
         setupUI()
         setupLayout()
         
         // Auto navigate to login after 5 seconds
+        print("Setting up 5 second timer")
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            print("5 seconds passed, navigating to login")
             self.navigateToLogin()
         }
     }
     
     private func navigateToLogin() {
+        print("Navigating to LoginViewController")
         let loginViewController = LoginViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         loginViewController.modalTransitionStyle = .crossDissolve
-        present(loginViewController, animated: true)
+        present(loginViewController, animated: true) {
+            print("Login view presented successfully")
+        }
     }
     
     private func setupUI() {
@@ -41,8 +47,9 @@ class IntroViewController: UIViewController {
         view.addSubview(containerView)
         
         // Icon Image View
-        iconImageView.image = UIImage(named: "iconintro")
+        iconImageView.image = UIImage(named: "iconintro") ?? UIImage(systemName: "photo")
         iconImageView.contentMode = .scaleAspectFit
+        iconImageView.backgroundColor = UIColor.red.withAlphaComponent(0.3) // Debug: add background to see if imageview exists
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(iconImageView)
         

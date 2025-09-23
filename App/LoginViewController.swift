@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("LoginViewController loaded")
         setupUI()
         setupLayout()
     }
@@ -39,8 +40,9 @@ class LoginViewController: UIViewController {
         view.addSubview(containerView)
         
         // Icon Image View
-        iconImageView.image = UIImage(named: "iconintro")
+        iconImageView.image = UIImage(named: "iconintro") ?? UIImage(systemName: "photo")
         iconImageView.contentMode = .scaleAspectFit
+        iconImageView.backgroundColor = UIColor.blue.withAlphaComponent(0.3) // Debug background
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(iconImageView)
         
@@ -69,7 +71,7 @@ class LoginViewController: UIViewController {
         // Login Label
         loginLabel.text = "Login"
         loginLabel.font = UIFont(name: "Poppins-Bold", size: 30)
-        loginLabel.textColor = UIColor(red: 0xFF/255.0, green: 0xF5/255.0, blue: 0xE0/255.0, alpha: 1.0)
+        loginLabel.textColor = UIColor(red: 0xFF/255.0, green: 0xF5/255.0, blue: 0xE0/255.0, alpha: 1.0) // #FFF5E0
         loginLabel.textAlignment = .center
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(loginLabel)
@@ -92,7 +94,7 @@ class LoginViewController: UIViewController {
         // Or with Email Label
         orWithEmailLabel.text = "Or with Email"
         orWithEmailLabel.font = UIFont(name: "Poppins-Regular", size: 14)
-        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0)
+        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0) // #E5D6CA
         orWithEmailLabel.textAlignment = .center
         orWithEmailLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(orWithEmailLabel)
@@ -112,14 +114,14 @@ class LoginViewController: UIViewController {
     
     private func setupSocialButtons() {
         // Google Button
-        googleButton.backgroundColor = UIColor(red: 0xEF/255.0, green: 0x88/255.0, blue: 0x29/255.0, alpha: 1.0)
+        googleButton.backgroundColor = UIColor(red: 0xEF/255.0, green: 0x88/255.0, blue: 0x29/255.0, alpha: 1.0) // #EF8829
         googleButton.layer.cornerRadius = 24
         googleButton.setTitle("  with Google", for: .normal)
         googleButton.setTitleColor(.white, for: .normal)
         googleButton.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 16)
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add Google icon
+        // Add Google icon (you'll need to add the actual icon)
         if let googleIcon = UIImage(named: "google_icon") {
             googleButton.setImage(googleIcon, for: .normal)
             googleButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
@@ -132,7 +134,7 @@ class LoginViewController: UIViewController {
         facebookButton.layer.borderColor = UIColor.white.cgColor
         facebookButton.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add Facebook icon
+        // Add Facebook icon (you'll need to add the actual icon)
         if let facebookIcon = UIImage(named: "facebook_icon") {
             facebookButton.setImage(facebookIcon, for: .normal)
             facebookButton.tintColor = .white
@@ -145,7 +147,7 @@ class LoginViewController: UIViewController {
         twitterButton.layer.borderColor = UIColor.white.cgColor
         twitterButton.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add Twitter icon
+        // Add Twitter icon (you'll need to add the actual icon)
         if let twitterIcon = UIImage(named: "twitter_icon") {
             twitterButton.setImage(twitterIcon, for: .normal)
             twitterButton.tintColor = .white
@@ -179,7 +181,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setupSignInButton() {
-        signInButton.backgroundColor = UIColor(red: 0x84/255.0, green: 0xBD/255.0, blue: 0x93/255.0, alpha: 1.0)
+        signInButton.backgroundColor = UIColor(red: 0x84/255.0, green: 0xBD/255.0, blue: 0x93/255.0, alpha: 1.0) // #84BD93
         signInButton.layer.cornerRadius = 24
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
@@ -226,7 +228,7 @@ class LoginViewController: UIViewController {
         emailLoginButton.setTitleColor(UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0), for: .normal)
         emailLoginButton.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 16)
         
-        // Add check icon on the right
+        // Add check icon on the right (you'll need to add the actual icon)
         if let checkIcon = UIImage(named: "check_icon") {
             emailLoginButton.setImage(checkIcon, for: .normal)
             emailLoginButton.imageView?.contentMode = .scaleAspectFit
@@ -272,7 +274,7 @@ class LoginViewController: UIViewController {
             // Google button constraints
             googleButton.heightAnchor.constraint(equalToConstant: 50),
             
-            // Facebook and Twitter buttons constraints
+            // Facebook and Twitter buttons constraints (square)
             facebookButton.heightAnchor.constraint(equalToConstant: 50),
             facebookButton.widthAnchor.constraint(equalToConstant: 50),
             
@@ -314,7 +316,7 @@ class LoginViewController: UIViewController {
             signUpLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             signUpLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             signUpLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            signUpLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            signUpLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
         ])
     }
 }
