@@ -2,7 +2,19 @@
 //  LoginViewController.swift
 //  App
 //
-//  Created by GitHub Copilot on 24/9/25.
+//  Created by GitHub         // Login Label
+             // Or with Email Label
+        orWithEmailLabel.text = "Or with Email"
+        orWithEmailLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular) // Temporary: use system font
+        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0)
+        orWithEmailLabel.textAlignment = .center
+        orWithEmailLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(orWithEmailLabel)nLabel.text = "Login"
+        loginLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // Temporary: use system font
+        loginLabel.textColor = UIColor(red: 0xFF/255.0, green: 0xF5/255.0, blue: 0xE0/255.0, alpha: 1.0)
+        loginLabel.textAlignment = .center
+        loginLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(loginLabel) on 24/9/25.
 //
 
 import UIKit
@@ -26,7 +38,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LoginViewController loaded")
         setupUI()
         setupLayout()
     }
@@ -40,15 +51,14 @@ class LoginViewController: UIViewController {
         view.addSubview(containerView)
         
         // Icon Image View
-        iconImageView.image = UIImage(named: "iconintro") ?? UIImage(systemName: "photo")
+        iconImageView.image = UIImage(named: "iconintro") // Asset name, no .png extension needed
         iconImageView.contentMode = .scaleAspectFit
-        iconImageView.backgroundColor = UIColor.blue.withAlphaComponent(0.3) // Debug background
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(iconImageView)
         
         // Title Label - "BugetBites"
         titleLabel.text = "BugetBites"
-        titleLabel.font = UIFont(name: "Poppins-Medium", size: 36)
+        titleLabel.font = UIFont.systemFont(ofSize: 36, weight: .medium) // Temporary: use system font
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -118,7 +128,7 @@ class LoginViewController: UIViewController {
         googleButton.layer.cornerRadius = 24
         googleButton.setTitle("  with Google", for: .normal)
         googleButton.setTitleColor(.white, for: .normal)
-        googleButton.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 16)
+        googleButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
         // Add Google icon (you'll need to add the actual icon)
@@ -166,7 +176,7 @@ class LoginViewController: UIViewController {
         
         passwordButton.setTitle("Password", for: .normal)
         passwordButton.setTitleColor(UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0), for: .normal)
-        passwordButton.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 16)
+        passwordButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         
         containerView.addSubview(passwordButton)
         
@@ -174,7 +184,7 @@ class LoginViewController: UIViewController {
         forgotButton.backgroundColor = .clear
         forgotButton.setTitle("Forgot?", for: .normal)
         forgotButton.setTitleColor(UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0), for: .normal)
-        forgotButton.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 16)
+        forgotButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         forgotButton.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(forgotButton)
@@ -185,7 +195,7 @@ class LoginViewController: UIViewController {
         signInButton.layer.cornerRadius = 24
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
-        signInButton.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 18)
+        signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(signInButton)
@@ -193,7 +203,7 @@ class LoginViewController: UIViewController {
     
     private func setupSignUpLabel() {
         signUpLabel.text = "New User? Sign Up"
-        signUpLabel.font = UIFont(name: "Poppins-Regular", size: 14)
+        signUpLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         signUpLabel.textAlignment = .center
         signUpLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -226,7 +236,7 @@ class LoginViewController: UIViewController {
         // Set title with left alignment
         emailLoginButton.setTitle("Your Email", for: .normal)
         emailLoginButton.setTitleColor(UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0), for: .normal)
-        emailLoginButton.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 16)
+        emailLoginButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         
         // Add check icon on the right (you'll need to add the actual icon)
         if let checkIcon = UIImage(named: "check_icon") {

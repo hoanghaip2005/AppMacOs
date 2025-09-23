@@ -16,26 +16,20 @@ class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("IntroViewController loaded")
         setupUI()
         setupLayout()
         
         // Auto navigate to login after 5 seconds
-        print("Setting up 5 second timer")
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            print("5 seconds passed, navigating to login")
             self.navigateToLogin()
         }
     }
     
     private func navigateToLogin() {
-        print("Navigating to LoginViewController")
         let loginViewController = LoginViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         loginViewController.modalTransitionStyle = .crossDissolve
-        present(loginViewController, animated: true) {
-            print("Login view presented successfully")
-        }
+        present(loginViewController, animated: true)
     }
     
     private func setupUI() {
@@ -47,15 +41,14 @@ class IntroViewController: UIViewController {
         view.addSubview(containerView)
         
         // Icon Image View
-        iconImageView.image = UIImage(named: "iconintro") ?? UIImage(systemName: "photo")
+        iconImageView.image = UIImage(named: "iconintro") // Asset name, no .png extension needed
         iconImageView.contentMode = .scaleAspectFit
-        iconImageView.backgroundColor = UIColor.red.withAlphaComponent(0.3) // Debug: add background to see if imageview exists
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(iconImageView)
         
         // Title Label - "BugetBites"
         titleLabel.text = "BugetBites"
-        titleLabel.font = UIFont(name: "Poppins-Medium", size: 48)
+        titleLabel.font = UIFont.systemFont(ofSize: 48, weight: .medium) // Temporary: use system font
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -77,7 +70,7 @@ class IntroViewController: UIViewController {
         
         // Subtitle Label - "FOOD DELIVERY APP"
         subtitleLabel.text = "FOOD DELIVERY APP"
-        subtitleLabel.font = UIFont(name: "Poppins-Bold", size: 18)
+        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold) // Temporary: use system font
         subtitleLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) // #fff
         subtitleLabel.textAlignment = .center
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
