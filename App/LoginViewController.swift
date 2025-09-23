@@ -211,6 +211,7 @@ class LoginViewController: UIViewController {
         
         signUpLabel.attributedText = attributedSignUp
         containerView.addSubview(signUpLabel)
+    }
     
     private func setupEmailLoginButton() {
         emailLoginButton.backgroundColor = .clear
@@ -235,6 +236,7 @@ class LoginViewController: UIViewController {
         }
         
         containerView.addSubview(emailLoginButton)
+    }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
