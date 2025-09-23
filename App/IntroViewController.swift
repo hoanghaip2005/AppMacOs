@@ -18,6 +18,18 @@ class IntroViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupLayout()
+        
+        // Auto navigate to login after 5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.navigateToLogin()
+        }
+    }
+    
+    private func navigateToLogin() {
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        loginViewController.modalTransitionStyle = .crossDissolve
+        present(loginViewController, animated: true)
     }
     
     private func setupUI() {
