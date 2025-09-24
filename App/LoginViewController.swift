@@ -2,19 +2,7 @@
 //  LoginViewController.swift
 //  App
 //
-//  Created by GitHub         // Login Label
-             // Or with Email Label
-        orWithEmailLabel.text = "Or with Email"
-        orWithEmailLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular) // Temporary: use system font
-        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0)
-        orWithEmailLabel.textAlignment = .center
-        orWithEmailLabel.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(orWithEmailLabel)nLabel.text = "Login"
-        loginLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // Temporary: use system font
-        loginLabel.textColor = UIColor(red: 0xFF/255.0, green: 0xF5/255.0, blue: 0xE0/255.0, alpha: 1.0)
-        loginLabel.textAlignment = .center
-        loginLabel.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(loginLabel) on 24/9/25.
+//  Created by GitHub Copilot on 24/9/25.
 //
 
 import UIKit
@@ -103,8 +91,8 @@ class LoginViewController: UIViewController {
         
         // Or with Email Label
         orWithEmailLabel.text = "Or with Email"
-        orWithEmailLabel.font = UIFont(name: "Poppins-Regular", size: 14)
-        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0) // #E5D6CA
+        orWithEmailLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        orWithEmailLabel.textColor = UIColor(red: 0xE5/255.0, green: 0xD6/255.0, blue: 0xCA/255.0, alpha: 1.0)
         orWithEmailLabel.textAlignment = .center
         orWithEmailLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(orWithEmailLabel)
